@@ -1,0 +1,5 @@
+# Archivos que cambian cada que se compila Latex
+*.aux
+*.gz
+*.log 
+*.pdf
