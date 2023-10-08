@@ -2,4 +2,5 @@
 *.aux
 *.gz
 *.log 
+*.out
 *.pdf

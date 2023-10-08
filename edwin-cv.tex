@@ -7,9 +7,18 @@
 \usepackage{fontawesome5}
 \usepackage{ragged2e}
 \usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
 
+% Section formatting
+\titleformat{\section}{\vspace{-4pt}\centering\large}{}{0pt}{}[\titlerule \vspace{-7pt}]
 
-
+% News Commands
+\newcommand{\CVitem}[1]{
+	\item \small{#1} \vspace{-2pt}	
+}
 \begin{document}
 
 \begin{minipage}[c]{0.21\textwidth}
@@ -21,9 +30,13 @@
 	\textbf{\Large Edwin Enrique Pérez Rodríguez}  \\[0.1cm]
 	{\footnotesize \faMapMarked*}\ Villahermosa, Tabasco, México \\[0.1cm]
 	{\footnotesize \faMobile* }\ 9932885771 \\[0.1cm]
-	{\footnotesize \faEnvelope[regular] }\ edwin.epr.219@gmail.com \\[0.1cm]
-	{\footnotesize \faLinkedin}\ https://www.linkedin.com/in/edwin-epr/ \\[0.1cm]
-	{\footnotesize \faGithub}\ https://github.com/EdHeny \\[0.1cm]
+	{\footnotesize \faEnvelope[regular] }\ \href{mailto:edwin.epr.219@gmail.com}{edwin.epr.219@gmail.com} \\[0.1cm]
+	{\footnotesize \faLinkedin}\ \url{https://www.linkedin.com/in/edwin-epr/} \\[0.1cm]
+	{\footnotesize \faGithub}\ \url{https://github.com/EdHeny} \\[0.1cm]
 \end{minipage}
 
+\section{Education}
+\section{Experiencia Profesional}
+\section{Habilidades Técnicas}
+\section{Idiomas}
 \end{document}
