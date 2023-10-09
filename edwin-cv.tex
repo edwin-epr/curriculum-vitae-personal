@@ -3,40 +3,125 @@
 % %%%%%%%%% Packages %%%%%%%%%%
 \usepackage[empty]{fullpage}
 \usepackage{geometry}
-\geometry{lmargin=1cm,rmargin=3cm,tmargin=1cm,bmargin=2cm}
 \usepackage{fontawesome5}
 \usepackage{ragged2e}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+% Settings
+\geometry{lmargin=1cm,rmargin=1cm,tmargin=1cm,bmargin=1cm}
 \urlstyle{same}
 
-% Section formatting
-\titleformat{\section}{\vspace{-4pt}\centering\large}{}{0pt}{}[\titlerule \vspace{-7pt}]
+%% Section formatting
+\titleformat{\section}{\centering\large}{}{0cm}{}[\titlerule]
 
-% News Commands
+%% News Commands
+\newcommand{\CVName}[1]{\textbf{\Large #1} \\[3mm]}
+\newcommand{\CVLocation}[1]{{\footnotesize \faMapMarked*} #1 \\}
+\newcommand{\CVMobile}[1]{{\footnotesize \faMobile*} #1 \\}
+\newcommand{\CVEmail}[1]{{\footnotesize \faEnvelope[regular] } \href{mailto:#1}{#1} \\}
+\newcommand{\CVLinkedin}[1]{{\footnotesize \faLinkedin}\ \url{#1} \\}
+\newcommand{\CVGithub}[1]{{\footnotesize \faGithub}\ \url{#1} \\}
+
 \newcommand{\CVitem}[1]{
-	\item \small{#1} \vspace{-2pt}	
+	\item \small{#1}  
 }
+\newcommand{\CVListStart}{\begin{itemize}[leftmargin=0cm, label={}]}
+\newcommand{\CVListEnd}{\end{itemize}}
+\newcommand{\CVSubHeading}[4]{
+	\item \begin{tabular*}{19.5cm}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\small #3 & \small #4 \\
+	\end{tabular*} \vspace{-8pt}
+}
+\newcommand{\CVItemizeStart}{\begin{itemize}[rightmargin=0.3cm, label={\tiny \textbullet}]}
+\newcommand{\CVItemizeEnd}{\end{itemize}}
+
+
 \begin{document}
 
-\begin{minipage}[c]{0.21\textwidth}
-	\includegraphics[width=3.5cm, height=4.5cm]{images/fotocv.jpg}
+\begin{minipage}[c]{2.7cm}
+	\includegraphics[width=2.5cm, height=3.5cm]{images/fotocv.jpg}
+	\hfill
 	\vrule
+	\hfill
 \end{minipage}
-\begin{minipage}[c]{0.7\textwidth}
-	\vspace{0.6cm}
-	\textbf{\Large Edwin Enrique Pérez Rodríguez}  \\[0.1cm]
-	{\footnotesize \faMapMarked*}\ Villahermosa, Tabasco, México \\[0.1cm]
-	{\footnotesize \faMobile* }\ 9932885771 \\[0.1cm]
-	{\footnotesize \faEnvelope[regular] }\ \href{mailto:edwin.epr.219@gmail.com}{edwin.epr.219@gmail.com} \\[0.1cm]
-	{\footnotesize \faLinkedin}\ \url{https://www.linkedin.com/in/edwin-epr/} \\[0.1cm]
-	{\footnotesize \faGithub}\ \url{https://github.com/EdHeny} \\[0.1cm]
+\begin{minipage}[c]{20cm}
+	\vspace{4mm}
+	\CVName{Edwin Enrique Pérez Rodríguez}
+	\CVLocation{Tabasco, México}
+	\CVMobile{9932885771}
+	\CVEmail{edwin.epr.219@gmail.com}
+	\CVLinkedin{https://www.linkedin.com/in/edwin-epr/}
+	\CVGithub{https://github.com/EdHeny}
 \end{minipage}
 
-\section{Education}
+\section{Educación}
+\CVListStart
+	\CVSubHeading{Maestria en Ciencia e Ingeniería de la Computación}{Agosto 2021 - Julio 2023}{Universidad Nacional Autónoma de México}{CDMX, México}
+	\CVSubHeading{Licenciatura en Matemáticas}{Agosto 2016 - Junio 2020}{Universidad Juárez Autónoma de Tabasco}{Tabasco, México}
+\CVListEnd
 \section{Experiencia Profesional}
-\section{Habilidades Técnicas}
-\section{Idiomas}
+\CVListStart
+	\CVSubHeading{Ayudante de Profesor}{Agosto 2022 - Julio 2023}{Universidad Nacional Autónoma de México}{CDMX, México}
+		\CVItemizeStart
+			\CVitem{Enseñé técnicas de paralelización usando los lenguajes de programación Julia y C para alumnos de la Licenciatura en Ciencia de Datos. }
+			\CVitem{Elaboré e impartí un taller de Estructuras Avanzadas de Datos en Python para alumnos de la Facultad de Ciencias.}
+		\CVItemizeEnd
+	\CVSubHeading{Profesor Particular}{Agosto 2017 - Julio 2021}{Consultorio Psicopedagógico}{Tabasco, México}
+		\CVItemizeStart
+			\CVitem{Clases de regularización o asesoría en matemáticas a alumnos de primaria hasta universidad.}
+		\CVItemizeEnd
+	\CVSubHeading{Empleado General}{Marzo 2016 - Agosto 2017}{Café La Cabaña}{Tabasco, México}
+		\CVItemizeStart
+			\CVitem{Elaboración de bebidas a base de café y atención al cliente.}
+		\CVItemizeEnd
+\CVListEnd
+\section{Habilidades}
+\CVListStart
+	\CVSubHeading{Idiomas}{}{}{}
+		\vspace{-18pt}
+		\CVItemizeStart
+			\begin{multicols}{3}
+				\CVitem{Inglés (Intermedio)}
+				\CVitem{Francés (Básico)}
+			\end{multicols}
+		\CVItemizeEnd
+	\CVSubHeading{Lenguajes de Programación}{}{}{}
+		\vspace{-18pt}
+		\CVItemizeStart
+			\begin{multicols}{4}
+				\CVitem{C/C++}
+				\CVitem{Julia}
+				\CVitem{Python}
+				\CVitem{MatLab}
+				%\CVitem{Kotlin}
+				%\CVitem{SQL}
+				%\CVitem{Bash}
+			\end{multicols}
+		\CVItemizeEnd
+	\CVSubHeading{Procesadores de Texto y Lenguajes de Marcado}{}{}{}
+		\vspace{-18pt}
+		\CVItemizeStart
+		\begin{multicols}{3}
+			\CVitem{Microsoft Office Suite}
+			\CVitem{Latex}
+			\CVitem{Markdown}
+		\end{multicols}
+		\CVItemizeEnd
+	\CVSubHeading{Sistemas Operativos}{}{}{}
+		\vspace{-18pt}
+		\CVItemizeStart
+		\begin{multicols}{3}
+			\CVitem{Linux}
+			\CVitem{Windows}
+			\CVitem{Mac Os}
+		\end{multicols}
+		\CVItemizeEnd
+		\CVListEnd
 \end{document}
