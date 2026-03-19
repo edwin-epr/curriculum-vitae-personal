@@ -1,0 +1,139 @@
+\documentclass[10pt, letterpaper]{article}
+
+% %%%%%%%%% Packages %%%%%%%%%%
+\usepackage[empty]{fullpage}
+\usepackage{geometry}
+\usepackage{fontawesome5}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[english]{babel}
+
+% Settings
+\geometry{lmargin=1cm,rmargin=1cm,tmargin=0.5cm,bmargin=0.5cm}
+\urlstyle{same}
+
+%% Section formatting
+\titleformat{\section}{\centering\large}{}{0cm}{}[\titlerule]
+
+%% News Commands
+\newcommand{\CVName}[1]{\textbf{\Large #1} \\[3mm]}
+\newcommand{\CVLocation}[1]{{\footnotesize \faMapMarked*} #1 \\}
+\newcommand{\CVMobile}[1]{{\footnotesize \faMobile*} #1 \\}
+\newcommand{\CVEmail}[1]{{\footnotesize \faEnvelope[regular] } \href{mailto:#1}{#1} \\}
+\newcommand{\CVLinkedin}[1]{{\footnotesize \faLinkedin}\ \url{#1} \\}
+\newcommand{\CVGithub}[1]{{\footnotesize \faGithub}\ \url{#1} \\}
+
+\newcommand{\CVitem}[1]{
+	\item \small{#1}
+}
+\newcommand{\CVListStart}{\begin{itemize}[leftmargin=0cm, label={}]}
+\newcommand{\CVListEnd}{\end{itemize}}
+\newcommand{\CVSubHeading}[4]{
+	\item \begin{tabular*}{19.5cm}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\small #3 & \small #4 \\
+	\end{tabular*} \vspace{-4pt}
+}
+\newcommand{\CVItemizeStart}{\begin{itemize}[rightmargin=1cm, label={\tiny \textbullet}]}
+\newcommand{\CVItemizeEnd}{\end{itemize}}
+
+
+\begin{document}
+\begin{center}
+	\begin{minipage}[c]{10cm}
+		\center
+		\CVName{Edwin Enrique Pérez Rodríguez}
+		\CVLocation{Mérida, México}
+		\CVEmail{edwin.epr.219@gmail.com}
+		\CVLinkedin{https://www.linkedin.com/in/edwin-epr/}
+		\CVGithub{https://github.com/EdHeny}
+	\end{minipage}
+\end{center}
+
+\section{Education}
+\CVListStart
+\CVSubHeading{Universidad Nacional Autónoma de México}{Mexico City, México}{Master's Degree in Computer Science and Engineering}{August 2021 -- July 2023}
+\CVItemizeStart
+\CVitem{Graduated}
+\CVItemizeEnd
+\CVSubHeading{Universidad Juárez Autónoma de Tabasco}{Villahermosa, México}{Bachelor's Degree in Mathematics}{August 2016 -- June 2020}
+\CVItemizeStart
+\CVitem{Graduated}
+\CVItemizeEnd
+\CVListEnd
+
+\section{Professional Experience}
+\CVListStart
+\CVSubHeading{\small Academic Technical Associate C}{February 2024 -- Present}{ENES Mérida UNAM}{Mérida, México}
+\CVItemizeStart
+\CVitem{Enabled and optimized code parallelization using programming interfaces such as OpenMP for CPU and OpenACC for GPU, significantly improving computational performance.}
+\CVitem{Developed Python and MATLAB scripts for automated retrieval, processing, and analysis of large volumes of numerical modeling data in the fields of meteorology and oceanography, sourced from web servers.}
+\CVitem{Provided specialized technical support for the installation, configuration, and execution of scientific software environments, resolving dependency and compatibility issues.}
+\CVitem{Member of the development team for ixchel 2D, a computational simulation software that solves thermofluid problems using the Control Volume Method and the Power Law scheme.}
+\CVitem{Led the modernization of the build infrastructure, implementing from scratch a CMake-based system capable of generating native CPU binaries and GPU-accelerated binaries from a single codebase.}
+\CVItemizeEnd
+
+\CVSubHeading{\small Mathematics Teacher}{August 2022 -- December 2022}{NUMERALIA}{Villahermosa, México}
+\CVItemizeStart
+\CVitem{Taught the NUMERALIA program to improve foundational math skills in children and teenagers.}
+\CVitem{Provided tutoring in physics and mathematics at the elementary, high school, and university levels.}
+\CVItemizeEnd
+
+\CVSubHeading{\small Teaching Assistant}{January 2023 -- June 2023}{Faculty of Sciences, UNAM}{Mexico City, México}
+\CVItemizeStart
+\CVitem{Designed and delivered a workshop on Advanced Data Structures in Python for undergraduate students at the Faculty of Sciences.}
+\CVItemizeEnd
+
+\CVListEnd
+
+\section{Skills}
+\CVListStart
+\CVSubHeading{Languages}{}{}{}
+\vspace{-15pt}
+\CVItemizeStart
+\begin{multicols}{2}
+	\CVitem{Spanish (Native)}\newline
+	\CVitem{English (Intermediate -- professional reading comprehension; intermediate writing and conversational skills.)}
+\end{multicols}
+\CVItemizeEnd
+\CVSubHeading{Programming Languages:}{}{}{}
+\vspace{-15pt}
+\CVItemizeStart
+\begin{multicols}{5}
+	\CVitem{C}
+	\CVitem{Fortran}
+	\CVitem{Python}
+	\CVitem{MATLAB}
+	\CVitem{Java}
+	\CVitem{SQL}
+	\CVitem{Bash}
+\end{multicols}
+\CVItemizeEnd
+%
+\CVSubHeading{Technologies and Frameworks:}{}{}{}
+\vspace{-15pt}
+\CVItemizeStart
+\begin{multicols}{4}
+	\CVitem{CUDA}
+	\CVitem{Spring Framework}
+	\CVitem{Spring Boot}
+	\CVitem{Git}
+	\CVitem{MySQL}
+	\CVitem{Hibernate}
+	\CVitem{Google Cloud}
+	\CVitem{Jekyll}
+	\CVitem{Docker}
+	\CVitem{CMake}
+	\CVitem{OpenACC}
+	\CVitem{OpenMP}
+\end{multicols}
+\CVItemizeEnd
+\CVListEnd
+
+\end{document}
